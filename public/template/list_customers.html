@@ -1,0 +1,25 @@
+<div class="table-jumb" ng-show="customers.length > 0" ng-controller="CustomerListCtrl">
+
+	<table ng-show="customers.length > 0" class="table table-hover">
+		<input class="form-control" ng-model="criterioBusca" placeholder="Pesquisar..." ng-show="customers.length > 0">
+		<tr>
+			<th>&nbsp;</th>
+			<th><a href="" ng-click="ordenarPor('nome')">Nome</a></th>
+			<th><a href="" ng-click="ordenarPor('telefone')">Telefone</a></th>
+			<th><a href="" ng-click="ordenarPor('data')">Data de Modificação</a></th>
+			<th>&nbsp;</th>
+		</tr>
+		<tr ng-class="{selecionado: customer.selecionado}" ng-repeat="customer in customers | filter: criterioBusca | orderBy:criterioOrdenamento:direcaoOrdenamento">
+			<td><input type="checkbox" ng-model="customer.selecionado"></td>
+			<td ui-sref="getcustomer({foo: customer._id})">{{customer.nome}}</td>
+			<td>{{customer.telefone}}</td>
+			<td>{{customer.data | date:'EEE, dd/MM/yyyy HH:mm'}}</td>
+			<td><button class="btn btn-warning btn-block" ng-click="editarCustomer(customer._id)" ng-disabled="hasCustomersSelecionados(customers)" ui-sref="addcustomer">Editar</button></td>
+		</tr>
+	</table>
+
+	<hr ng-if="hasCustomersSelecionados(customers)"	 />
+
+	<button class="btn btn-danger btn-block" ng-click="deleteCustomer(customers)" ng-if="hasCustomersSelecionados(customers)">Deletar</button>
+
+</div>

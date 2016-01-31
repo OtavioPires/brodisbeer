@@ -1,0 +1,12 @@
+<div class="show-jumb"  ng-controller="CustomerGetCtrl">
+
+	<div class="alert alert-info" role="alert">{{customer.nome}}</div>
+	<div class="alert alert-info" role="alert">{{customer.endereco}}</div>
+	<div class="alert alert-info" role="alert">{{customer.numero}}</div>
+	<div ng-if="customer.complemento != null" class="alert alert-info" role="alert">{{customer.complemento}}</div>
+	<div class="alert alert-info" role="alert">{{customer.bairro}}</div>
+	<div ng-if="customer.complemento != null" class="alert alert-info" role="alert">{{customer.referencia}}</div>
+	<div class="alert alert-info" role="alert">{{customer.email}}</div>
+	<div class="alert alert-info" role="alert">{{customer.telefone}}</div>
+
+</div>

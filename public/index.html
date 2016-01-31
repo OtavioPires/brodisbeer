@@ -1,0 +1,42 @@
+<html ng-app="brodisbeer">
+<head>
+	<meta charset="utf-8">
+	<title>Bodisbeer</title>
+</head>
+<body>
+
+	<nav class="nav-menu">	
+		<div class="menu" >
+
+			<a class="item" ui-sref="addcustomer">
+				<img class="image" src="img/account_plus.png">
+			</a>
+
+			<a class="item" ui-sref="listcustomer">
+				<img class="image" src="img/format_list_bulleted.png">
+			</a>
+
+		</div>
+	</nav>
+
+	<div class="container">
+		<div ui-view></div>
+	</div>
+
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap-css/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap-css/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+	
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-locale-pt-br/angular-locale_pt-br.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+	<script src="bower_components/ngMask/dist/ngMask.min.js"></script>
+
+	<script src="js/customer.controller.js"></script>
+	<script src="js/customer.service.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+	
+</body>
+</html>

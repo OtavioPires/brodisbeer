@@ -1,0 +1,49 @@
+<div class="form-jumb" ng-controller="CustomerAddCtrl">
+
+	<form name="customerForm">
+		<input class="form-style" ng-model="customer.nome" name="nome" placeholder="Nome" ng-required="true" type="text">
+
+		<input class="form-style" name="endereco" ng-model="customer.endereco" placeholder="Endereço" ng-required="true" type="text">
+
+		<input class="form-style" name="numero" ng-model="customer.numero" ng-required="true" placeholder="eg. 658" type="text">
+
+		<input class="form-style" name="complemento" ng-model="customer.complemento" placeholder="Complemento" type="text">
+
+		<input class="form-style" name="bairro" ng-model="customer.bairro" ng-required="true" placeholder="Bairro" type="text">
+
+		<input class="form-style" name="referencia" ng-model="customer.referencia" placeholder="Referência" type="text">		
+		
+		<input class="form-style" name="email" ng-model="customer.email" ng-required="true" placeholder="eg. exemplo@gmail.com" type="text">
+		
+		<input class="form-style" mask="(99) 9?9999-9999" name="telefone" ng-model="customer.telefone" placeholder="Telefone" ng-required="true" ng-pattern="/^\(\d{2}\)\s\d{4,5}-\d{4}$/" type="text">
+	</form>
+	
+	<hr/>
+
+	<!-- Mensagens de alerta -->
+	<div class="alert alert-danger" ng-show="customerForm.nome.$error.required && customerForm.nome.$dirty">Preencha o campo Nome!
+	</div>		
+
+	<div class="alert alert-danger" ng-show="customerForm.telefone.$error.required && customerForm.telefone.$dirty">Preencha o campo Telefone!
+	</div>
+
+	<div class="alert alert-danger" ng-show="customerForm.endereco.$error.required && customerForm.endereco.$dirty">Preencha o campo Endereço!
+	</div>
+
+	<div class="alert alert-danger" ng-show="customerForm.bairro.$error.required && customerForm.endereco.$dirty">Preencha o campo Bairro!
+	</div>
+
+	<div class="alert alert-danger" ng-show="customerForm.numero.$error.required && customerForm.numero.$dirty">Preencha o campo Numero para referenciar a residência!
+	</div>
+
+	<div class="alert alert-danger" ng-show="customerForm.email.$error.required && customerForm.email.$dirty">Preencha o campo Email!
+	</div>
+
+	<div class="alert alert-danger" ng-show="customerForm.telefone.$error.pattern">Telefone deve sequir (##) ####-#### ou com digito 9 a mais!
+	</div>
+	
+	<button id="btn-add" class="btn btn-primary btn-block" ng-click="adicionaCustomer(customer)" ng-disabled="customerForm.$invalid" ui-sref="listcustomer">Adicionar Cliente</button>
+
+	<button id="btn-upd" class="btn btn-info btn-block" ng-click="atualizarCustomer(customer)"  ng-disabled="customerForm.$invalid" ui-sref="listcustomer">Atualizar</button>
+
+</div>
